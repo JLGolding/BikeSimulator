@@ -1,14 +1,13 @@
 package SimulatorTests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 
 import SimulatorCode.*;
 
-public class AreaTest {
+public class AreaTests {
 
     private Area area = new Area();
 

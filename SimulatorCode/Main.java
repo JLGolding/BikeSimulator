@@ -1,8 +1,13 @@
 package SimulatorCode;
 
+import java.io.Console;
+
+
 class Main{
     public static void main(String [] args) {
-        System.out.println("Hello Main");
+        ConsoleReader console = new ConsoleReader();
+
+        System.out.println(console.readInput());
     }
 }
 

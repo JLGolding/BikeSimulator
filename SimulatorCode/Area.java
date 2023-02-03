@@ -18,10 +18,10 @@ public class Area {
     }
 
     private boolean isLessThanMaxGridSize(int x, int y){
-        final int maxX = 7;
-        final int maxY = 7;
+        final int MAX_X = 7;
+        final int MAX_Y = 7;
 
-        return x < maxX && y < maxY;
+        return x < MAX_X && y < MAX_Y;
     }
 
     private boolean isNotNegativeValue(int x, int y){
