@@ -1,6 +1,6 @@
 package SimulatorCode;
 
-import SimulatorCode.enums.Directions;
+import SimulatorCode.Types.Directions;
 
 public class Bike {
     private Directions direction;

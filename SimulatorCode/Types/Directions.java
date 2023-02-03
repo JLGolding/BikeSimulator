@@ -1,4 +1,4 @@
-package SimulatorCode.enums;
+package SimulatorCode.Types;
 
 public enum Directions {
     NORTH,

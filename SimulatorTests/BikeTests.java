@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import SimulatorCode.enums.Directions;
 import SimulatorCode.Bike;
+import SimulatorCode.Types.Directions;
 
 public class BikeTests {
     
