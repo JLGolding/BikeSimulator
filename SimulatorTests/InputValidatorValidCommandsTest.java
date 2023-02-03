@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 import SimulatorCode.Validators.*;
 
@@ -18,7 +19,7 @@ public class InputValidatorValidCommandsTest{
     String input; 
     InputValidator validator = new InputValidator();
 
-    @Parameterized.Parameters(name = "{0}")
+    @Parameters(name = "{0}")
     public static Collection<Object[]> inputCommands(){
         
 
@@ -29,6 +30,10 @@ public class InputValidatorValidCommandsTest{
             {"TURN_RIGHT"},
             {"GPS_REPORT"},
             {"forward"},
+            {"place"},
+            {"turn_left"},
+            {"turn_right"},
+            {"gps_report"}
             
         });
     }
