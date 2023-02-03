@@ -4,8 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+
 
 import SimulatorCode.*;
 
@@ -24,8 +23,6 @@ public class AreaTest {
         assertEquals(0, result.getYPosition());
     }
 
-   
-
     @Test
     public void BikeCannotBePlacedOutsideGridBounds(){
         area.placeBike(8, 8);
@@ -33,6 +30,15 @@ public class AreaTest {
         var result = area.getBikePosition();
 
         assertFalse(result.getXPosition() > 7);
+    }
+
+    @Test
+    public void BikePlacementCoordinateMustBeGreaterThanZero(){
+        area.placeBike(-1, -1);
+
+        var result = area.getBikePosition();
+
+        assertFalse(result.getXPosition() < 0);
     }
     
 }

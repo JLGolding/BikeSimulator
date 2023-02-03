@@ -17,5 +17,15 @@ public class BikeTests {
         assertEquals(expectedDirection, bike.getFacingDirection());
 
     }
+
+    @Test
+    public void whenFacingNorthAndTurnLeftDirectionIsUpdatedToWest(){
+        var expectedDirection = Directions.WEST;
+        var bike = new Bike(Directions.NORTH);
+
+        bike.turn(Directions.LEFT);
+
+        assertEquals(expectedDirection, bike.getFacingDirection());
+    }
     
 }
