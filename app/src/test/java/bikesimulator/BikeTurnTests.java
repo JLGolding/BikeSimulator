@@ -14,14 +14,14 @@ import bikesimulator.Types.Directions;
 
 
 @RunWith(Parameterized.class)
-public class BikeTests {
+public class BikeTurnTests {
 
     private Bike bike;
     Directions startDirection;
     Directions newDirection;
     Directions expectedFinalDirection;
     
-    public BikeTests(Directions startingDirection, Directions newDirection, Directions expectedDirection){
+    public BikeTurnTests(Directions startingDirection, Directions newDirection, Directions expectedDirection){
         this.startDirection = startingDirection;
         this.newDirection = newDirection;
         expectedFinalDirection = expectedDirection;
