@@ -42,6 +42,10 @@ public class Simulator {
                     bikePosition.getXPosition(), bikePosition.getYPosition(), bike.getFacingDirection().toString());
                     writer.Print(output);
                 }
+                if(command.equals("TURN_RIGHT")){
+                    //update bike directon
+                    
+                }
             }
         }
     }

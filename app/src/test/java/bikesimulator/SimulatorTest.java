@@ -1,6 +1,6 @@
 package bikesimulator;
 
-import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -62,14 +62,31 @@ public class SimulatorTest {
         verify(writer).Print("(4,1), EAST");
     }
 
-    // @Test
-    // public void WhenAValidPlaceCommandIsGivenGPS_REPORTCommandGivesTheUpdatedPositionAndDirection(){
-    //     //input
-    //     //area
-    //     //input gps
-    //     //expect
-    //     var expectedResponse = "2,3 WEST";
+    @Test
+    public void CommandsAreOnlyDoneAfterAValidPlaceCommandIsDoneFirst(){
+        Stack<String> inputs = new Stack<String>();
+        inputs.push("q");
+        inputs.push("GPS_REPORT");
+        inputs.push("PLACE 4,1,EAST");
+        inputs.push("TURN_RIGHT");
 
-    //     assertEquals(expectedResponse, mockconsoleOutput);
-    // }
+        InputReader reader = new TestInputReader(inputs);
+        Coordinate expectedCoordinate = new Coordinate(4, 1);
+
+        when(validator.validate("PLACE")).thenReturn(true);
+        when(validator.validate("GPS_REPORT")).thenReturn(true);
+        when(validator.validate("TURN_RIGHT")).thenReturn(true);
+      
+        when(area.getBikePosition()).thenReturn(expectedCoordinate);
+        when(bike.getFacingDirection()).thenReturn(Directions.EAST);
+
+        
+        Simulator sim = new Simulator(area, reader, writer, validator, bike);
+
+        sim.run();
+
+        verify(bike, times(1)).setDirection(any());
+        verify(writer).Print("(4,1), EAST");
+        
+    }
 }

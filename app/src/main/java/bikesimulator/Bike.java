@@ -21,5 +21,26 @@ public class Bike {
         if(direction == Directions.NORTH && changingDirection == Directions.LEFT){
             direction = Directions.WEST;
         }
+        else if(direction == Directions.NORTH && changingDirection == Directions.RIGHT){
+            direction = Directions.EAST;
+        }
+        else if(direction == Directions.EAST && changingDirection == Directions.RIGHT){
+            direction = Directions.SOUTH;
+        }
+        else if(direction == Directions.EAST && changingDirection == Directions.LEFT){
+            direction = Directions.NORTH;
+        }
+        else if(direction == Directions.SOUTH && changingDirection == Directions.RIGHT){
+            direction = Directions.WEST;
+        }
+        else if(direction == Directions.SOUTH && changingDirection == Directions.LEFT){
+            direction = Directions.EAST;
+        }
+        else if(direction == Directions.WEST && changingDirection == Directions.RIGHT){
+            direction = Directions.NORTH;
+        }
+        else if(direction == Directions.WEST && changingDirection == Directions.LEFT){
+            direction = Directions.SOUTH;
+        }
     }
 }
