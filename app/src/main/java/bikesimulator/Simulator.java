@@ -25,6 +25,7 @@ public class Simulator {
 
     public void run(){
         boolean running = true;
+        boolean bikePlacedInitially = false;
         while(running){
             var input = reader.readInput();
             if(input.equals("q")) running = false;
@@ -35,17 +36,20 @@ public class Simulator {
                     var points = elements[1].split(",");
                     area.placeBike(Integer.parseInt(points[0]), Integer.parseInt(points[1]));
                     bike.setDirection(Directions.valueOf(points[2]));
+                    if(bikePlacedInitially == false) bikePlacedInitially = true;
                 }
-                if(command.equals("GPS_REPORT")){
-                    var bikePosition = area.getBikePosition();
-                    String output = MessageFormat.format("({0},{1}), {2}", 
-                    bikePosition.getXPosition(), bikePosition.getYPosition(), bike.getFacingDirection().toString());
-                    writer.Print(output);
+                if(bikePlacedInitially){
+                    if(command.equals("GPS_REPORT")){
+                        var bikePosition = area.getBikePosition();
+                        String output = MessageFormat.format("({0},{1}), {2}", 
+                        bikePosition.getXPosition(), bikePosition.getYPosition(), bike.getFacingDirection().toString());
+                        writer.Print(output);
+                    }
+                    if(command.contains("TURN")){
+                        bike.turn(Directions.valueOf(command));    
+                    }
                 }
-                if(command.equals("TURN_RIGHT")){
-                    //update bike directon
-                    
-                }
+                
             }
         }
     }
