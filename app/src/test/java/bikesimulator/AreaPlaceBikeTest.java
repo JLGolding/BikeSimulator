@@ -1,6 +1,6 @@
-package SimulatorTests;
+package bikesimulator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -10,17 +10,16 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import SimulatorCode.*;
-import SimulatorCode.Types.SimulatorConstants;
+import bikesimulator.Types.Constants;
 
 @RunWith(Parameterized.class)
-public class AreaTests {
+public class AreaPlaceBikeTest {
 
-    private Area area = new Area(SimulatorConstants.MAX_X, SimulatorConstants.MAX_Y);
+    private Area area = new Area(Constants.MAX_X, Constants.MAX_Y);
     private int x;
     private int y;
 
-    public AreaTests(int xInput, int yInput){
+    public AreaPlaceBikeTest(int xInput, int yInput){
         x = xInput;
         y = yInput;
     }
@@ -44,8 +43,8 @@ public class AreaTests {
 
         var result = area.getBikePosition();
 
-        assertTrue(result.getXPosition() >= 0 && result.getXPosition() < SimulatorConstants.MAX_X);
-        assertTrue(result.getYPosition() >= 0 && result.getYPosition() < SimulatorConstants.MAX_Y);
+        assertTrue(result.getXPosition() >= 0 && result.getXPosition() < Constants.MAX_X);
+        assertTrue(result.getYPosition() >= 0 && result.getYPosition() < Constants.MAX_Y);
     }
 
        

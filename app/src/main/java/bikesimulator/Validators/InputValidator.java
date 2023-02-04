@@ -1,6 +1,6 @@
-package SimulatorCode.Validators;
+package bikesimulator.Validators;
 
-import SimulatorCode.Types.Commands;
+import bikesimulator.Types.Commands;
 
 public class InputValidator implements Validate {
     public boolean validate(String input){

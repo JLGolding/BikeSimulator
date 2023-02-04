@@ -1,4 +1,4 @@
-package SimulatorCode.Types;
+package bikesimulator.Types;
 
 public enum Commands {
     PLACE,

@@ -1,4 +1,4 @@
-package SimulatorTests;
+package bikesimulator;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import SimulatorCode.Validators.*;
+import bikesimulator.Validators.*;
 
 @RunWith(Parameterized.class)
 public class InputValidatorValidCommandsTest{

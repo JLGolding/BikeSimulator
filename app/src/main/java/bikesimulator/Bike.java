@@ -1,6 +1,6 @@
-package SimulatorCode;
+package bikesimulator;
 
-import SimulatorCode.Types.Directions;
+import bikesimulator.Types.Directions;
 
 public class Bike {
     private Directions direction;

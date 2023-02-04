@@ -1,11 +1,10 @@
-package SimulatorTests;
+package bikesimulator;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import SimulatorCode.Bike;
-import SimulatorCode.Types.Directions;
+import bikesimulator.Types.Directions;
 
 public class BikeTests {
     

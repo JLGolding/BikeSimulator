@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "/Users/admin/Documents/repos/BikeSimulatorapp:cleanapp",
+			"script": "app:clean",
+			"description": "Deletes the build directory.",
+			"group": "build",
+			"project": "app",
+			"buildFile": "/Users/admin/Documents/repos/BikeSimulator/app/build.gradle",
+			"rootProject": "BikeSimulator",
+			"projectFolder": "/Users/admin/Documents/repos/BikeSimulator",
+			"workspaceFolder": "/Users/admin/Documents/repos/BikeSimulator",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:clean"
+		}
+	]
+}

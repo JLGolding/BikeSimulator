@@ -1,4 +1,4 @@
-package SimulatorCode.Types;
+package bikesimulator.Types;
 
 public class Coordinate {
     private int x = 0;

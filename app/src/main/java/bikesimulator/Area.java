@@ -1,5 +1,5 @@
-package SimulatorCode;
-import SimulatorCode.Types.*;
+package bikesimulator;
+import bikesimulator.Types.*;
 
 public class Area {
     
