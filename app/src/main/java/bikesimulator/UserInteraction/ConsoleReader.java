@@ -1,4 +1,4 @@
-package bikesimulator;
+package bikesimulator.UserInteraction;
 
 public class ConsoleReader implements InputReader{
 

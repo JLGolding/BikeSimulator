@@ -9,6 +9,10 @@ public class Bike {
         this.direction = direction;
     }
 
+    public void setDirection(Directions direction){
+        this.direction = direction;
+    }
+
     public Directions getFacingDirection(){
         return direction;
     }

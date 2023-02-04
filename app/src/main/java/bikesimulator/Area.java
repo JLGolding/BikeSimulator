@@ -24,8 +24,7 @@ public class Area {
     }
 
     private boolean isLessThanMaxGridSize(int x, int y){
-        
-
+    
         return x < maxX && y < maxY;
     }
 

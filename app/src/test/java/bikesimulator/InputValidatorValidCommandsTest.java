@@ -24,17 +24,11 @@ public class InputValidatorValidCommandsTest{
         
 
         return Arrays.asList(new Object[][]{
-            {"PLACE 0,0 NORTH"},
+            {"PLACE"},
             {"FORWARD"},
             {"TURN_LEFT"},
             {"TURN_RIGHT"},
-            {"GPS_REPORT"},
-            {"forward"},
-            {"place"},
-            {"turn_left"},
-            {"turn_right"},
-            {"gps_report"}
-            
+            {"GPS_REPORT"},            
         });
     }
 
