@@ -25,7 +25,7 @@ public class Area {
     }
 
     private boolean isNotNegativeValue(int x, int y){
-        return  !(x<= 0 && y <= 0);
+        return  (x>= 0 && y >= 0);
     }
 
     public Coordinate getBikePosition(){
@@ -56,7 +56,7 @@ public class Area {
     }
 
     private boolean canBikeMove(Coordinate coord){
-        if(isLessThanMaxGridSize(coord.getXPosition(), coord.getYPosition())){
+        if(isLessThanMaxGridSize(coord.getXPosition(), coord.getYPosition()) && isNotNegativeValue(coord.getXPosition(), coord.getYPosition())){
             return true;
         }
         

@@ -28,14 +28,14 @@ public class AreaMoveVerticalBikeTest {
     @Parameters
     public static Collection<Object[]> inputs(){
         return Arrays.asList(new Object[][]{
-            {Directions.NORTH, 2},
+            {Directions.NORTH, 1},
             {Directions.SOUTH, 0},
         });
     }
 
     @Before
     public void setUp(){
-        area.placeBike(1, 1);
+        area.placeBike(1, 0);
     }
 
     @Test
