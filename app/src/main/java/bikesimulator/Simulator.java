@@ -48,6 +48,9 @@ public class Simulator {
                     if(command.contains("TURN")){
                         bike.turn(Directions.valueOf(command));    
                     }
+                    if(command.equals("FORWARD")){
+                        area.moveBike(bike);
+                    }
                 }
                 
             }

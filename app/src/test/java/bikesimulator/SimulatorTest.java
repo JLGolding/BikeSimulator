@@ -25,8 +25,6 @@ public class SimulatorTest {
     @Mock
     private Area area;
 
-
-
     @Mock
     private InputValidator validator;
 
@@ -88,5 +86,33 @@ public class SimulatorTest {
         verify(bike, times(1)).setDirection(any());
         verify(writer).Print("(4,1), EAST");
         
+    }
+
+    @Test
+    public void MoveCommandAfterPlaceUpdatesBikePosition(){
+        Stack<String> inputs = new Stack<String>();
+        inputs.push("q");
+        inputs.push("GPS_REPORT");
+        inputs.push("FORWARD");
+        inputs.push("PLACE 4,1,EAST");
+        
+
+        InputReader reader = new TestInputReader(inputs);
+        Coordinate expectedCoordinate = new Coordinate(5, 1);
+
+        when(validator.validate("PLACE")).thenReturn(true);
+        when(validator.validate("GPS_REPORT")).thenReturn(true);
+        when(validator.validate("FORWARD")).thenReturn(true);
+      
+        when(area.getBikePosition()).thenReturn(expectedCoordinate);
+        when(bike.getFacingDirection()).thenReturn(Directions.EAST);
+        
+        Simulator sim = new Simulator(area, reader, writer, validator, bike);
+
+        sim.run();
+
+        verify(bike, times(1)).setDirection(any());
+        verify(area).moveBike(bike);
+        verify(writer).Print("(5,1), EAST");
     }
 }
