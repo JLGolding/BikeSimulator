@@ -5,6 +5,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.File;
 import java.util.Stack;
 
 import org.junit.Test;
@@ -16,6 +17,7 @@ import bikesimulator.Types.Coordinate;
 import bikesimulator.Types.Directions;
 import bikesimulator.UserInteraction.ConsoleOutput;
 import bikesimulator.UserInteraction.InputReader;
+import bikesimulator.UserInteraction.TextInputReader;
 import bikesimulator.Validators.InputValidator;
 
 
@@ -170,5 +172,28 @@ public class SimulatorTest {
         verify(bike, times(1)).setDirection(any());
         verify(bike).turn(Directions.RIGHT);
         verify(writer).Print("(4,1), SOUTH");
+    }
+
+    @Test
+    public void InputsCanBeReadFromTextFile(){
+        File file = new File("src/test/resources/test-data.text");
+        InputReader reader = new TextInputReader(file);
+        Coordinate expectedCoordinate = new Coordinate(4, 1);
+
+        when(validator.validate("PLACE")).thenReturn(true);
+        when(validator.validate("GPS_REPORT")).thenReturn(true);
+        when(validator.validate("TURN_RIGHT")).thenReturn(true);
+        when(validator.validate("FORWARD")).thenReturn(true);
+      
+        when(area.getBikePosition()).thenReturn(expectedCoordinate);
+        when(bike.getFacingDirection()).thenReturn(Directions.EAST);
+        
+        Simulator sim = new Simulator(area, reader, writer, validator, bike);
+
+        sim.run();
+
+        verify(bike, times(1)).setDirection(any());
+        verify(bike).turn(Directions.RIGHT);
+        verify(writer).Print("(4,1), EAST");
     }
 }
