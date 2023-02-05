@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ConsoleReader implements InputReader{
-
+  
     public String readInput(){
         String input;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
