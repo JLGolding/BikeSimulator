@@ -18,7 +18,7 @@ public class Bike {
     }
 
     public void turn(Directions changingDirection){
-        if(direction == Directions.NORTH && changingDirection == Directions.LEFT){
+        if(direction == Directions.NORTH && changingDirection.equals(Directions.LEFT)) {
             setDirection(Directions.WEST);
         }
         else if(direction == Directions.NORTH && changingDirection == Directions.RIGHT){

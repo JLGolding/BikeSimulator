@@ -46,7 +46,8 @@ public class Simulator {
                         writer.Print(output);
                     }
                     if(command.contains("TURN")){
-                        bike.turn(Directions.valueOf(command));    
+                        var direction = command.split("_")[1];
+                        bike.turn(Directions.valueOf(direction));    
                     }
                     if(command.equals("FORWARD")){
                         area.moveBike(bike);
