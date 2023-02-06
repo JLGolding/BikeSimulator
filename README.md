@@ -7,11 +7,13 @@ when cloning locally use gradle build to build jar file and then run using:
 
 ```java -jar app.jar```
 
-app reads inputs both from command line and text file with command seperated by ;
-To red inputs from file add file path to the end of the run command
+app reads inputs both from command line and text file with command seperated by ';'
+To red inputs from file add file path to the end of the run command.
 
 eg:
 ```java -jar app.jar Documents/inputs.text```
+
+Note the code looks for '/' in the file path to determine if it is a file or not
 
 it is also possible to build and ru the porject using docker however only command line inputs are possible
 ```docker build -t app .```(build)
